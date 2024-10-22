@@ -17,6 +17,7 @@ class Bus(Base):
     driver_name = Column(String(50))
     conducter_name = Column(String(50))
     conducter_contact = Column(String(50))
+    password = Column(String(50) , nullable = False)
 
 class BusLocation(Base):
     __tablename__ = "buses_location"
@@ -27,14 +28,14 @@ class BusLocation(Base):
     shard_id = Column(Integer)
 
 class BusStatus(Base):
-    __tabelname__ = "buses_status"
+    __tablename__ = "bus_status"
 
     bus_id = Column(Integer, primary_key=True, index=True)
     status = Column(Boolean , nullable= False)
     bus_no = Column(String(50) , unique = True)
 
 class BusRoute(Base):
-    __tablename__ = "buses_routes"
+    __tablename__ = "bus_routes"
 
     bus_id = Column(Integer, primary_key=True, index=True)
     stop1 = Column(Integer , nullable=True)

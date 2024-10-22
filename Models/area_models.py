@@ -10,7 +10,6 @@ class RouteResponse(BaseModel):
 
 class AreaResponse(BaseModel):
     area_name: str
-    area_designation: str
 
 class RouteBusesResponse(BaseModel):
     route_id: int

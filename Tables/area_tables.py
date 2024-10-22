@@ -14,7 +14,7 @@ class Area(Base):
     area_name = Column(String(50) , nullable = False)
 
 class Route(Base):
-    __tablename__ = "fairs"
+    __tablename__ = "fares"
 
     route_id = Column(Integer , primary_key= True , autoincrement = True)
     start_id = Column(Integer , index = True)
