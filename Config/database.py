@@ -11,7 +11,9 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_NAME = os.getenv("DB_NAME")
 
 
-URL_DATABASE = f"mysql+pymysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}"
+# URL_DATABASE = f"mysql+pymysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:3306/${DB_NAME}"
+
+URL_DATABASE = "mysql+pymysql://admin:Graphic8012@busappdb.c9wo86eco8pm.eu-north-1.rds.amazonaws.com:3306/busdb"
 
 engine = create_engine(URL_DATABASE)
 

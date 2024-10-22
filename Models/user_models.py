@@ -6,8 +6,10 @@ class UserResponse(BaseModel):
     last_name: str | None = None  # Optional field
     age: int
     occupation: str
+    email : str
+    username : str
+    password : str
 
 class UserLoginResponse(BaseModel):
-    user_id: int
     username: str
     password: str

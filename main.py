@@ -12,8 +12,8 @@ app.include_router(bus_router , prefix = "/bus")
 app.include_router(user_router , prefix="/user")
 
 bus_tables.Base.metadata.create_all(bind=engine)
-area_tables.Base.metadata.create_all(bind=engine)
-user_tables.Base.metadata.create_all(bind=engine)
+# area_tables.Base.metadata.create_all(bind=engine)
+# user_tables.Base.metadata.create_all(bind=engine)
 
 
 

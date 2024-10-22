@@ -5,13 +5,16 @@ class BusResponse(BaseModel):
     driver_name: str
     conducter_name: str
     conducter_contact: str
+    password : str
 
+class BusLoginResponse(BaseModel):
+    bus_no : str
+    password : str
 
 class BusLocationResponse(BaseModel):
     bus_id: int
     latitude: float
     longitude: float
-    shard_id: int
 
 class BusStatusResponse(BaseModel):
     bus_id: int

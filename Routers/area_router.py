@@ -3,6 +3,7 @@ from Models.area_models import AreaResponse , RouteResponse , RouteBusesResponse
 from Tables.area_tables import Area , Route , RouteBuses
 from Config.dependency import db_dependency
 from Tables.bus_tables import BusRoute, BusStatus
+from Serializer.area_serializer import area_serializer , route_serializer , route_buses , list_faculty_serializer
 
 area_router = APIRouter()
 
@@ -15,8 +16,18 @@ async def create_area(response : AreaResponse , db :db_dependency):
     db.refresh(db_area)
 
 @area_router.get("/get")
-async def get_area(name : str  , db:db_dependency):
-    return
+async def get_area(query : str , db : db_dependency):
+    search_query = query.lower()
+    # Default: Substring match (searching like a search bar)
+    areas = db.query(Area).filter(Area.area_name.ilike(f"%{search_query}%")).all()
+
+    # Extract area names from the query result
+    matching_areas = [area.area_name for area in areas]
+
+    # Return the result or a message if no matches found
+    if not matching_areas:
+        raise HTTPException(detail= "No Such Area" , status_code= 400)
+    return area_serializer(matching_areas)
 
 
 @area_router.post("/route/create")
@@ -52,4 +63,4 @@ async def get_route_buses(start_id : int , end_id : int , db : db_dependency):
     if not statuses:
         raise HTTPException(status_code=404, detail="No bus statuses found")
 
-    return statuses
+    return list_faculty_serializer(statuses)
