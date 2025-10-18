@@ -1,6 +1,6 @@
-# 🧠 Bussatthi Backend – FastAPI Powered Real-Time Bus Tracking Server
+# 🧠 BusSaathi Backend – FastAPI Powered Real-Time Bus Tracking Server
 
-The **Bussatthi Backend** is the core of the **Bussatthi ecosystem**, powering both the **Passenger App** and the **Driver App**.  
+The **BusSaathi Backend** is the core of the **BusSaathi ecosystem**, powering both the **Passenger App** and the **Driver App**.  
 Built with **Python (FastAPI)** and **AWS RDS (MySQL)**, it manages **real-time bus tracking**, **user authentication**, and **live location synchronization** between drivers and passengers — ensuring no one ever misses a bus again. 🚍⚡
 
 
